@@ -1,56 +1,61 @@
 #include <boost/asio.hpp>
-#include <boost/asio/strand.hpp>
+#include <boost/asio/buffered_stream.hpp>
+#include <boost/beast.hpp>
 #include <iostream>
-#include <iomanip>
-#include <thread>
 
-void Log(const boost::system::error_code& ec)
-{
-    std::cerr << "[" << std::setw(14) << std::this_thread::get_id() << "] "
-              << (ec ? "Error" : "OK")
-              << (ec ? ec.message() : "")
-              << std::endl;
-}
-
-void OnConnect(const boost::system::error_code& ec)
-{
-    Log(ec);
-}
-
+// Test Synchronous WebSocket Client
 int main(void)
 {
-    std::cerr << "[" << std::setw(14) << std::this_thread::get_id() << "] main" << std::endl;
-    boost::asio::io_context ioc {};
-
-    boost::asio::ip::tcp::socket socket {boost::asio::make_strand(ioc)};
-
-    size_t threadCount {4};
-
+    // store any errors
     boost::system::error_code ec {};
 
+    // execution context for the io service
+    boost::asio::io_context ioc {};
+
+    // for this specific example, connect to a dedicated test socket over HTTP (web)
     boost::asio::ip::tcp::resolver resolver {ioc};
-    auto endpoint {resolver.resolve("google.com", "80", ec)};
-    if (ec)
+    auto endpoint { resolver.resolve("echo.websocket.org", "80", ec) };
+
+    // create socket and establish connection
+    boost::asio::ip::tcp::socket socket {ioc};
+    std::cout << "::client::connecting to echo.websockets.org..." << std::endl;
+    socket.connect(*endpoint, ec);
+    std::cout << "::client::connected!" << std::endl;
+    if (ec && ec != boost::asio::error::eof)
     {
-        Log(ec);
+        std::cerr << "::client::error -> " << ec.message() << std::endl;
         return -1;
     }
-    for (size_t idx {0}; idx < threadCount; ++idx)
+    // pass socket into beast's websocket interface to perform a HTTP handshake 
+    boost::beast::websocket::stream<boost::asio::ip::tcp::socket> websocket_stream{std::move(socket)};
+    // perform the actual handshake
+    std::cout << "::client::handshaking..." << std::endl;
+    std::cout << "::client::waiting for response..." << std::endl;
+    websocket_stream.handshake("echo.websocket.org", "/", ec);
+    // set stream state to read/write text
+    websocket_stream.text(true);
+    auto msg = std::string {"hello, echo.websocket.org!"};
+    boost::asio::const_buffer msgbuffer {msg.c_str(), msg.size()};
+    websocket_stream.write(msgbuffer, ec);
+
+    if (ec && ec != boost::asio::error::eof)
     {
-        socket.async_connect(*endpoint, OnConnect);
+        std::cerr << "::client::write::error -> " << ec.message() << std::endl;
+        return -2;
     }
-    auto threads = std::vector<std::thread>{};
-    for (size_t idx {0}; idx < threadCount; ++idx)
+    boost::beast::flat_buffer rmsgbuffer {};
+    websocket_stream.read(rmsgbuffer, ec);
+
+    if (ec && ec != boost::asio::error::eof)
     {
-        threads.emplace_back([&ioc]()
-            {
-                ioc.run();
-            }
-        );
+        std::cerr << "::client::read::error -> " << ec.message() << std::endl;
+        return -3;
     }
-    for (size_t idx {0}; idx < threadCount; ++idx)
-    {
-        threads[idx].join();
-    }
+
+    std::cout << "::client::response...\n"
+              << "ECHO: "
+              << boost::beast::make_printable(rmsgbuffer.data())
+              << std::endl;
+
     return 0;
 }
