@@ -1,0 +1,3 @@
+/mnt/c/Users/turakz/Desktop/learncpptp/projects/livetransportmonitor/network-monitor/build/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/turakz/Desktop/learncpptp/projects/livetransportmonitor/network-monitor/build/CMakeFiles/edit_cache.dir
+/mnt/c/Users/turakz/Desktop/learncpptp/projects/livetransportmonitor/network-monitor/build/CMakeFiles/network-monitor.dir
