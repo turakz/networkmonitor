@@ -63,6 +63,7 @@ build cmake_object_order_depends_target_network-monitor: phony || CMakeFiles/net
 
 build CMakeFiles/network-monitor.dir/src/main.cpp.o: CXX_COMPILER__network-monitor_ ../src/main.cpp || cmake_object_order_depends_target_network-monitor
   DEP_FILE = CMakeFiles/network-monitor.dir/src/main.cpp.o.d
+  FLAGS = -std=gnu++17
   INCLUDES = -isystem /home/blotter/.conan/data/boost/1.74.0/_/_/package/34d4c2885d762a3c4d4b21d2e4dc9a8182b545fa/include -isystem /home/blotter/.conan/data/bzip2/1.0.8/_/_/package/da606cf731e334010b0bf6e85a2a6f891b9f36b0/include -isystem /home/blotter/.conan/data/zlib/1.2.11/_/_/package/6af9cc7cb931c5ad942174fd7838eb655717c709/include -isystem /home/blotter/.conan/data/libiconv/1.16/_/_/package/6af9cc7cb931c5ad942174fd7838eb655717c709/include
   OBJECT_DIR = CMakeFiles/network-monitor.dir
   OBJECT_FILE_DIR = CMakeFiles/network-monitor.dir/src
