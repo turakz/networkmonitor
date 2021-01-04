@@ -10,21 +10,35 @@ if(EXISTS ${CMAKE_CURRENT_BINARY_DIR}/conaninfo.txt)
 endif()
 find_package(Boost 1.74 REQUIRED COMPONENTS system)
 
-set(SOURCES
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp"
+# Static library
+set(LIB_SOURCES
     "${CMAKE_CURRENT_SOURCE_DIR}/src/websocket-client.cpp"
 )
-
-add_executable(network-monitor ${SOURCES})
+add_library(network-monitor STATIC ${LIB_SOURCES})
 target_compile_features(network-monitor
-    PRIVATE
+    PUBLIC
         cxx_std_14
 )
 target_include_directories(network-monitor
-    PRIVATE
-        src
+    PUBLIC
+        inc/network-monitor
 )
 target_link_libraries(network-monitor
+    PUBLIC
+        Boost::Boost
+)
+
+# Tests
+set(TESTS_SOURCES
+    "${CMAKE_CURRENT_SOURCE_DIR}/tests/websocket-client.cpp"
+)
+add_executable(network-monitor-tests ${TESTS_SOURCES})
+target_compile_features(network-monitor-tests
     PRIVATE
+        cxx_std_14
+)
+target_link_libraries(network-monitor-tests
+    PRIVATE
+        network-monitor
         Boost::Boost
 )
