@@ -21,7 +21,7 @@ target_compile_features(network-monitor
 )
 target_include_directories(network-monitor
     PUBLIC
-        inc/network-monitor
+        inc
 )
 target_link_libraries(network-monitor
     PUBLIC
