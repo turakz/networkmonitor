@@ -1,10 +1,10 @@
-Start testing: Jan 05 12:27 EST
+Start testing: Jan 05 13:21 EST
 ----------------------------------------------------------
 1/1 Testing: network-monitor-tests
 1/1 Test: network-monitor-tests
 Command: "/mnt/c/Users/turakz/Desktop/learncpptp/projects/livetransportmonitor/network-monitor/build/network-monitor-tests"
 Directory: /mnt/c/Users/turakz/Desktop/learncpptp/projects/livetransportmonitor/network-monitor/build
-"network-monitor-tests" start time: Jan 05 12:27 EST
+"network-monitor-tests" start time: Jan 05 13:21 EST
 Output:
 ----------------------------------------------------------
 Running 2 test cases...
@@ -12,12 +12,12 @@ Running 2 test cases...
 [1;32;49m*** No errors detected
 [0;39;49m
 <end of output>
-Test time =   0.64 sec
+Test time =   0.38 sec
 ----------------------------------------------------------
 Test Pass Reason:
 Required regular expression found. Regex=[.*No errors detected]
-"network-monitor-tests" end time: Jan 05 12:27 EST
+"network-monitor-tests" end time: Jan 05 13:21 EST
 "network-monitor-tests" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Jan 05 12:27 EST
+End testing: Jan 05 13:21 EST

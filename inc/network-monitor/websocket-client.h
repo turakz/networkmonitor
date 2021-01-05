@@ -3,6 +3,7 @@
 
 #include <boost/asio.hpp>
 #include <boost/beast.hpp>
+#include <boost/beast/ssl.hpp>
 #include <boost/system/error_code.hpp>
 
 #include <functional>
@@ -26,7 +27,8 @@ public:
     WebSocketClient(
         const std::string& url,
         const std::string& port,
-        boost::asio::io_context& ioc
+        boost::asio::io_context& ioc,
+        boost::asio::ssl::context& ssl_ctx
     );
 
     /*! \brief Destructor
@@ -77,7 +79,7 @@ private:
     // constructor.
     boost::asio::ip::tcp::resolver resolver_;
     boost::beast::websocket::stream<
-        boost::beast::tcp_stream
+        boost::beast::ssl_stream<boost::beast::tcp_stream>
     > ws_;
 
     boost::beast::flat_buffer rBuffer_ {};
@@ -93,6 +95,10 @@ private:
     );
 
     void OnConnect(
+        const boost::system::error_code& ec
+    );
+
+    void OnTlsHandshake(
         const boost::system::error_code& ec
     );
 
