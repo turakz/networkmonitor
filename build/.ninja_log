@@ -1,15 +1,15 @@
 # ninja log v5
 18	4124	1609307314937828100	CMakeFiles/network-monitor.dir/src/main.cpp.o	60cf020e773ca1db
 4125	5106	1609307315914758400	network-monitor	4ec974ec585ca433
-25	22895	1609776116365056700	CMakeFiles/network-monitor.dir/src/websocket-client.cpp.o	d9f5938b86c36da7
-22	4801	1609776098272514200	CMakeFiles/network-monitor-tests.dir/tests/websocket-client.cpp.o	475eeec14c8bdbeb
-22896	23005	1609776116466460000	libnetwork-monitor.a	9010afa5cabb7c6f
-23006	23249	1609776116701452200	network-monitor-tests	93c99a122acd2b5d
-22	1708	1609781290190911400	CMakeFiles/network-monitor-tests.dir/tests/main.cpp.o	144b00dd4fb2d78
-19	1271	1609781307258470500	CMakeFiles/network-monitor-tests.dir/tests/main.cpp.o	6be772a1608792dd
-22	5167	1609781311155775600	CMakeFiles/network-monitor-tests.dir/tests/websocket-client.cpp.o	475eeec14c8bdbeb
-5168	5538	1609781311523095700	network-monitor-tests	8bf1bf9b0cc6a8cb
-0	999	0	CMakeFiles/test.util	8f1824330330e94e
-0	291	0	CMakeFiles/test.util	8f1824330330e94e
-0	312	0	CMakeFiles/test.util	8f1824330330e94e
-1	280	0	CMakeFiles/test.util	8f1824330330e94e
+0	322	0	CMakeFiles/test.util	8f1824330330e94e
+27	23728	1609867179641392600	CMakeFiles/network-monitor.dir/src/websocket-client.cpp.o	cc2ef71087085a67
+21	5523	1609785423695058600	CMakeFiles/network-monitor-tests.dir/tests/websocket-client.cpp.o	52c2b409c6d6f2e5
+22900	23011	1609785441187362600	libnetwork-monitor.a	9010afa5cabb7c6f
+24	369	1609785910265635500	network-monitor-tests	dbf19ad33bd357d7
+22	1691	1609867157600683000	CMakeFiles/network-monitor-tests.dir/tests/main.cpp.o	6d42112e7b9e6bd9
+20	1622	1609867614784708100	CMakeFiles/network-monitor-tests.dir/tests/main.cpp.o	7a7da866b3503ed0
+24	6444	1609867619599098500	CMakeFiles/network-monitor-tests.dir/tests/websocket-client.cpp.o	4ebb374a4ddea6d1
+26	23783	1609867636943336500	CMakeFiles/network-monitor.dir/src/websocket-client.cpp.o	8c78e8be950c1831
+23783	23931	1609867637089528700	libnetwork-monitor.a	9010afa5cabb7c6f
+23931	24645	1609867637799016600	network-monitor-tests	dbf19ad33bd357d7
+0	747	0	CMakeFiles/test.util	8f1824330330e94e

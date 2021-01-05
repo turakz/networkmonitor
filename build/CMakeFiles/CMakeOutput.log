@@ -409,3 +409,31 @@ Parsed CXX implicit link information from above output:
   implicit fwks: []
 
 
+Determining if the include file filesystem exists passed with the following output:
+Change Dir: /mnt/c/Users/turakz/Desktop/learncpptp/projects/livetransportmonitor/network-monitor/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_1c977 && [1/2] Building CXX object CMakeFiles/cmTC_1c977.dir/CheckIncludeFile.cxx.o
+[2/2] Linking CXX executable cmTC_1c977
+
+
+
+Performing C++ SOURCE FILE Test CXX_FILESYSTEM_NO_LINK_NEEDED succeeded with the following compile output:
+Change Dir: /mnt/c/Users/turakz/Desktop/learncpptp/projects/livetransportmonitor/network-monitor/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_b4585 && [1/2] Building CXX object CMakeFiles/cmTC_b4585.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_b4585
+
+
+...and run output:
+/mnt/c/Users/turakz/Desktop/learncpptp/projects/livetransportmonitor/network-monitor/build
+Return value: 1
+Source file was:
+        #include <cstdlib>
+        #include <filesystem>
+
+        int main() {
+            auto cwd = std::filesystem::current_path();
+            printf("%s", cwd.c_str());
+            return EXIT_SUCCESS;
+        }
+    

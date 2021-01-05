@@ -1,16 +1,19 @@
 [includedirs]
 /home/blotter/.conan/data/boost/1.74.0/_/_/package/34d4c2885d762a3c4d4b21d2e4dc9a8182b545fa/include
+/home/blotter/.conan/data/openssl/1.1.1h/_/_/package/6af9cc7cb931c5ad942174fd7838eb655717c709/include
 /home/blotter/.conan/data/zlib/1.2.11/_/_/package/6af9cc7cb931c5ad942174fd7838eb655717c709/include
 /home/blotter/.conan/data/bzip2/1.0.8/_/_/package/da606cf731e334010b0bf6e85a2a6f891b9f36b0/include
 /home/blotter/.conan/data/libiconv/1.16/_/_/package/6af9cc7cb931c5ad942174fd7838eb655717c709/include
 
 [libdirs]
 /home/blotter/.conan/data/boost/1.74.0/_/_/package/34d4c2885d762a3c4d4b21d2e4dc9a8182b545fa/lib
+/home/blotter/.conan/data/openssl/1.1.1h/_/_/package/6af9cc7cb931c5ad942174fd7838eb655717c709/lib
 /home/blotter/.conan/data/zlib/1.2.11/_/_/package/6af9cc7cb931c5ad942174fd7838eb655717c709/lib
 /home/blotter/.conan/data/bzip2/1.0.8/_/_/package/da606cf731e334010b0bf6e85a2a6f891b9f36b0/lib
 /home/blotter/.conan/data/libiconv/1.16/_/_/package/6af9cc7cb931c5ad942174fd7838eb655717c709/lib
 
 [bindirs]
+/home/blotter/.conan/data/openssl/1.1.1h/_/_/package/6af9cc7cb931c5ad942174fd7838eb655717c709/bin
 /home/blotter/.conan/data/bzip2/1.0.8/_/_/package/da606cf731e334010b0bf6e85a2a6f891b9f36b0/bin
 /home/blotter/.conan/data/libiconv/1.16/_/_/package/6af9cc7cb931c5ad942174fd7838eb655717c709/bin
 
@@ -19,6 +22,7 @@
 
 [builddirs]
 /home/blotter/.conan/data/boost/1.74.0/_/_/package/34d4c2885d762a3c4d4b21d2e4dc9a8182b545fa/
+/home/blotter/.conan/data/openssl/1.1.1h/_/_/package/6af9cc7cb931c5ad942174fd7838eb655717c709/
 /home/blotter/.conan/data/zlib/1.2.11/_/_/package/6af9cc7cb931c5ad942174fd7838eb655717c709/
 /home/blotter/.conan/data/bzip2/1.0.8/_/_/package/da606cf731e334010b0bf6e85a2a6f891b9f36b0/
 /home/blotter/.conan/data/libiconv/1.16/_/_/package/6af9cc7cb931c5ad942174fd7838eb655717c709/
@@ -63,6 +67,8 @@ boost_filesystem
 boost_system
 boost_wserialization
 boost_serialization
+ssl
+crypto
 z
 bz2
 iconv
@@ -70,6 +76,7 @@ charset
 
 [system_libs]
 rt
+dl
 pthread
 
 [defines]
@@ -203,6 +210,73 @@ cmake_find_package_multi=Boost
 [generatorfilenames_boost]
 cmake_find_package=Boost
 cmake_find_package_multi=Boost
+
+
+[includedirs_openssl]
+/home/blotter/.conan/data/openssl/1.1.1h/_/_/package/6af9cc7cb931c5ad942174fd7838eb655717c709/include
+
+[libdirs_openssl]
+/home/blotter/.conan/data/openssl/1.1.1h/_/_/package/6af9cc7cb931c5ad942174fd7838eb655717c709/lib
+
+[bindirs_openssl]
+/home/blotter/.conan/data/openssl/1.1.1h/_/_/package/6af9cc7cb931c5ad942174fd7838eb655717c709/bin
+
+[resdirs_openssl]
+
+
+[builddirs_openssl]
+/home/blotter/.conan/data/openssl/1.1.1h/_/_/package/6af9cc7cb931c5ad942174fd7838eb655717c709/
+
+[libs_openssl]
+ssl
+crypto
+
+[system_libs_openssl]
+dl
+pthread
+
+[defines_openssl]
+
+
+[cppflags_openssl]
+
+
+[cxxflags_openssl]
+
+
+[cflags_openssl]
+
+
+[sharedlinkflags_openssl]
+
+
+[exelinkflags_openssl]
+
+
+[sysroot_openssl]
+
+
+[frameworks_openssl]
+
+
+[frameworkdirs_openssl]
+
+
+[rootpath_openssl]
+/home/blotter/.conan/data/openssl/1.1.1h/_/_/package/6af9cc7cb931c5ad942174fd7838eb655717c709
+
+[name_openssl]
+openssl
+
+[version_openssl]
+1.1.1h
+
+[generatornames_openssl]
+cmake_find_package=OpenSSL
+cmake_find_package_multi=OpenSSL
+
+[generatorfilenames_openssl]
+
 
 
 [includedirs_zlib]
@@ -404,9 +478,11 @@ cmake_find_package_multi=Iconv
 [USER_boost]
 [USER_bzip2]
 [USER_libiconv]
+[USER_openssl]
 [USER_zlib]
 [ENV_boost]
 BOOST_ROOT=/home/blotter/.conan/data/boost/1.74.0/_/_/package/34d4c2885d762a3c4d4b21d2e4dc9a8182b545fa
+[ENV_openssl]
 [ENV_zlib]
 [ENV_bzip2]
 [ENV_libiconv]

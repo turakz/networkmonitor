@@ -2,13 +2,20 @@ cmake_minimum_required(VERSION 3.17 FATAL_ERROR)
 
 project(network-monitor)
 
+# enable youcompleteme integration
+set(CMAKE_EXPORT_COMPILE_COMMANDS "ON")
+
 # Dependencies
 # If dependencies are managed with conan, we set the CMake module path (where
 # CMake looks for dependencies) to the current build folder.
 if(EXISTS ${CMAKE_CURRENT_BINARY_DIR}/conaninfo.txt)
     set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_BINARY_DIR})
 endif()
+# Add the current CMake modules folder to the CMake search path.
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 find_package(Boost 1.74 REQUIRED COMPONENTS system unit_test_framework)
+find_package(Filesystem REQUIRED)
+find_package(OpenSSL REQUIRED)
 
 # Called before any other target is defined.
 enable_testing()
@@ -29,6 +36,8 @@ target_include_directories(network-monitor
 target_link_libraries(network-monitor
     PUBLIC
         Boost::Boost
+        OpenSSL::OpenSSL
+        std::filesystem
 )
 
 # Tests
@@ -41,10 +50,15 @@ target_compile_features(network-monitor-tests
     PRIVATE
         cxx_std_14
 )
+target_compile_definitions(network-monitor-tests
+    PRIVATE
+        TESTS_CACERT_PEM="${CMAKE_CURRENT_SOURCE_DIR}/tests/cacert.pem"
+)
 target_link_libraries(network-monitor-tests
     PRIVATE
         network-monitor
         Boost::Boost
+        std::filesystem
 )
 add_test(
     NAME network-monitor-tests
