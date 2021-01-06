@@ -1,2 +1,2 @@
-network-monitor-tests 11 0.0342786
+network-monitor-tests 12 0.142009
 ---

@@ -2,6 +2,7 @@
 #define NETWORK_MONITOR_WEBSOCKET_CLIENT_H
 
 #include <boost/asio.hpp>
+#include <boost/asio/ssl.hpp>
 #include <boost/beast.hpp>
 #include <boost/beast/ssl.hpp>
 #include <boost/system/error_code.hpp>
@@ -11,7 +12,7 @@
 
 namespace NetworkMonitor {
 
-/*! \brief Client to connect to a WebSocket server over plain TCP
+/*! \brief Client to connect to a WebSocket server over TLS
  */
 class WebSocketClient {
 public:
@@ -20,15 +21,19 @@ public:
      *  \note This constructor does not initiate a connection.
      *
      *  \param url  The URL of the server.
+     *  \param endpoint The endpoint on the server to connect to.
+     *                  Example: echo.websocket.org/<endpoint>
      *  \param port The port on the server.
      *  \param ioc  The io_context object. The user takes care of calling
      *              ioc.run().
+     *  \param ctx  The TLS context to setup a TLS socket stream.
      */
     WebSocketClient(
         const std::string& url,
+        const std::string& endpoint,
         const std::string& port,
         boost::asio::io_context& ioc,
-        boost::asio::ssl::context& ssl_ctx
+        boost::asio::ssl::context& ctx
     );
 
     /*! \brief Destructor
@@ -73,6 +78,7 @@ public:
 
 private:
     std::string url_ {};
+    std::string endpoint_ {};
     std::string port_ {};
 
     // We leave these uninitialized because they do not support a default

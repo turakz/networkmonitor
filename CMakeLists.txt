@@ -37,7 +37,6 @@ target_link_libraries(network-monitor
     PUBLIC
         Boost::Boost
         OpenSSL::OpenSSL
-        std::filesystem
 )
 
 # Tests
@@ -48,7 +47,7 @@ set(TESTS_SOURCES
 add_executable(network-monitor-tests ${TESTS_SOURCES})
 target_compile_features(network-monitor-tests
     PRIVATE
-        cxx_std_14
+        cxx_std_17
 )
 target_compile_definitions(network-monitor-tests
     PRIVATE
