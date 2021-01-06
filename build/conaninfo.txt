@@ -3,6 +3,7 @@
 
 [requires]
     boost/1.Y.Z
+    libcurl/7.Y.Z
     openssl/1.Y.Z
 
 [options]
@@ -14,6 +15,7 @@
 [full_requires]
     boost/1.74.0:34d4c2885d762a3c4d4b21d2e4dc9a8182b545fa
     bzip2/1.0.8:da606cf731e334010b0bf6e85a2a6f891b9f36b0
+    libcurl/7.74.0:539b44da7a736f055c2112b92bba7f29d6d3c644
     libiconv/1.16:6af9cc7cb931c5ad942174fd7838eb655717c709
     openssl/1.1.1h:6af9cc7cb931c5ad942174fd7838eb655717c709
     zlib/1.2.11:6af9cc7cb931c5ad942174fd7838eb655717c709
@@ -76,6 +78,25 @@
     bzip2:build_executable=True
     bzip2:fPIC=True
     bzip2:shared=False
+    libcurl:darwin_ssl=deprecated
+    libcurl:fPIC=True
+    libcurl:shared=False
+    libcurl:with_brotli=False
+    libcurl:with_c_ares=False
+    libcurl:with_largemaxwritesize=False
+    libcurl:with_ldap=False
+    libcurl:with_libidn=False
+    libcurl:with_libmetalink=False
+    libcurl:with_libpsl=False
+    libcurl:with_librtmp=False
+    libcurl:with_libssh2=False
+    libcurl:with_nghttp2=False
+    libcurl:with_openssl=deprecated
+    libcurl:with_ssl=openssl
+    libcurl:with_winssl=deprecated
+    libcurl:with_wolfssl=deprecated
+    libcurl:with_zlib=True
+    libcurl:with_zstd=False
     libiconv:fPIC=True
     libiconv:shared=False
     openssl:386=False

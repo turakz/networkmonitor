@@ -9,6 +9,7 @@ class ConanPackage(ConanFile):
     requires = [
         ('boost/1.74.0'),
         ('openssl/1.1.1h'),
+        ('libcurl/7.74.0')
     ]
 
     default_options = (
