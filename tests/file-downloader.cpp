@@ -6,9 +6,9 @@
 #include <filesystem>
 #include <fstream>
 #include <string>
-#include <iostream>
 
 using NetworkMonitor::DownloadFile;
+using NetworkMonitor::ParseJsonFile;
 
 BOOST_AUTO_TEST_SUITE(network_monitor);
 
@@ -23,7 +23,6 @@ BOOST_AUTO_TEST_CASE(file_downloader)
 
     // Download the file.
     bool downloaded {DownloadFile(fileUrl, destination, TESTS_CACERT_PEM)};
-    std::cout << "download successful... " << destination << std::endl;
     BOOST_CHECK(downloaded);
     BOOST_CHECK(std::filesystem::exists(destination));
 
@@ -32,7 +31,6 @@ BOOST_AUTO_TEST_CASE(file_downloader)
     // can at least check some expected file properties.
     const std::string expectedString {"\"stations\": ["};
     std::ifstream file {destination};
-    BOOST_CHECK(file.good());
     std::string line {};
     bool foundExpectedString {false};
     while (std::getline(file, line)) {
@@ -45,6 +43,21 @@ BOOST_AUTO_TEST_CASE(file_downloader)
 
     // Clean up.
     std::filesystem::remove(destination);
+}
+
+BOOST_AUTO_TEST_CASE(parse_file)
+{
+    // Parse the file.
+    const std::filesystem::path sourceFile {TESTS_NETWORK_LAYOUT_JSON};
+    nlohmann::json parsed = ParseJsonFile(sourceFile);
+    BOOST_CHECK(parsed.is_object());
+    BOOST_CHECK(parsed.size() > 0);
+    BOOST_CHECK(parsed.contains("lines"));
+    BOOST_CHECK(parsed.at("lines").size() > 0);
+    BOOST_CHECK(parsed.contains("stations"));
+    BOOST_CHECK(parsed.at("stations").size() > 0);
+    BOOST_CHECK(parsed.contains("travel_times"));
+    BOOST_CHECK(parsed.at("travel_times").size() > 0);
 }
 
 BOOST_AUTO_TEST_SUITE_END();

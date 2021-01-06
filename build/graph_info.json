@@ -313,6 +313,14 @@
    "False"
   ],
   [
+   "nlohmann_json:implicit_conversions",
+   "True"
+  ],
+  [
+   "nlohmann_json:multiple_headers",
+   "False"
+  ],
+  [
    "openssl:386",
    "False"
   ],

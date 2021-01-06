@@ -4,6 +4,7 @@
 [requires]
     boost/1.Y.Z
     libcurl/7.Y.Z
+    nlohmann_json/3.Y.Z
     openssl/1.Y.Z
 
 [options]
@@ -15,8 +16,9 @@
 [full_requires]
     boost/1.74.0:34d4c2885d762a3c4d4b21d2e4dc9a8182b545fa
     bzip2/1.0.8:da606cf731e334010b0bf6e85a2a6f891b9f36b0
-    libcurl/7.74.0:539b44da7a736f055c2112b92bba7f29d6d3c644
+    libcurl/7.73.0:539b44da7a736f055c2112b92bba7f29d6d3c644
     libiconv/1.16:6af9cc7cb931c5ad942174fd7838eb655717c709
+    nlohmann_json/3.9.1:d1091b2ed420e6d287293709a907ae824d5de508
     openssl/1.1.1h:6af9cc7cb931c5ad942174fd7838eb655717c709
     zlib/1.2.11:6af9cc7cb931c5ad942174fd7838eb655717c709
 
@@ -99,6 +101,8 @@
     libcurl:with_zstd=False
     libiconv:fPIC=True
     libiconv:shared=False
+    nlohmann_json:implicit_conversions=True
+    nlohmann_json:multiple_headers=False
     openssl:386=False
     openssl:fPIC=True
     openssl:no_aria=False

@@ -1,6 +1,7 @@
 [includedirs]
 /home/blotter/.conan/data/boost/1.74.0/_/_/package/34d4c2885d762a3c4d4b21d2e4dc9a8182b545fa/include
-/home/blotter/.conan/data/libcurl/7.74.0/_/_/package/539b44da7a736f055c2112b92bba7f29d6d3c644/include
+/home/blotter/.conan/data/libcurl/7.73.0/_/_/package/539b44da7a736f055c2112b92bba7f29d6d3c644/include
+/home/blotter/.conan/data/nlohmann_json/3.9.1/_/_/package/d1091b2ed420e6d287293709a907ae824d5de508/include
 /home/blotter/.conan/data/zlib/1.2.11/_/_/package/6af9cc7cb931c5ad942174fd7838eb655717c709/include
 /home/blotter/.conan/data/bzip2/1.0.8/_/_/package/da606cf731e334010b0bf6e85a2a6f891b9f36b0/include
 /home/blotter/.conan/data/libiconv/1.16/_/_/package/6af9cc7cb931c5ad942174fd7838eb655717c709/include
@@ -8,24 +9,25 @@
 
 [libdirs]
 /home/blotter/.conan/data/boost/1.74.0/_/_/package/34d4c2885d762a3c4d4b21d2e4dc9a8182b545fa/lib
-/home/blotter/.conan/data/libcurl/7.74.0/_/_/package/539b44da7a736f055c2112b92bba7f29d6d3c644/lib
+/home/blotter/.conan/data/libcurl/7.73.0/_/_/package/539b44da7a736f055c2112b92bba7f29d6d3c644/lib
 /home/blotter/.conan/data/zlib/1.2.11/_/_/package/6af9cc7cb931c5ad942174fd7838eb655717c709/lib
 /home/blotter/.conan/data/bzip2/1.0.8/_/_/package/da606cf731e334010b0bf6e85a2a6f891b9f36b0/lib
 /home/blotter/.conan/data/libiconv/1.16/_/_/package/6af9cc7cb931c5ad942174fd7838eb655717c709/lib
 /home/blotter/.conan/data/openssl/1.1.1h/_/_/package/6af9cc7cb931c5ad942174fd7838eb655717c709/lib
 
 [bindirs]
-/home/blotter/.conan/data/libcurl/7.74.0/_/_/package/539b44da7a736f055c2112b92bba7f29d6d3c644/bin
+/home/blotter/.conan/data/libcurl/7.73.0/_/_/package/539b44da7a736f055c2112b92bba7f29d6d3c644/bin
 /home/blotter/.conan/data/bzip2/1.0.8/_/_/package/da606cf731e334010b0bf6e85a2a6f891b9f36b0/bin
 /home/blotter/.conan/data/libiconv/1.16/_/_/package/6af9cc7cb931c5ad942174fd7838eb655717c709/bin
 /home/blotter/.conan/data/openssl/1.1.1h/_/_/package/6af9cc7cb931c5ad942174fd7838eb655717c709/bin
 
 [resdirs]
-/home/blotter/.conan/data/libcurl/7.74.0/_/_/package/539b44da7a736f055c2112b92bba7f29d6d3c644/res
+/home/blotter/.conan/data/libcurl/7.73.0/_/_/package/539b44da7a736f055c2112b92bba7f29d6d3c644/res
 
 [builddirs]
 /home/blotter/.conan/data/boost/1.74.0/_/_/package/34d4c2885d762a3c4d4b21d2e4dc9a8182b545fa/
-/home/blotter/.conan/data/libcurl/7.74.0/_/_/package/539b44da7a736f055c2112b92bba7f29d6d3c644/
+/home/blotter/.conan/data/libcurl/7.73.0/_/_/package/539b44da7a736f055c2112b92bba7f29d6d3c644/
+/home/blotter/.conan/data/nlohmann_json/3.9.1/_/_/package/d1091b2ed420e6d287293709a907ae824d5de508/
 /home/blotter/.conan/data/zlib/1.2.11/_/_/package/6af9cc7cb931c5ad942174fd7838eb655717c709/
 /home/blotter/.conan/data/bzip2/1.0.8/_/_/package/da606cf731e334010b0bf6e85a2a6f891b9f36b0/
 /home/blotter/.conan/data/libiconv/1.16/_/_/package/6af9cc7cb931c5ad942174fd7838eb655717c709/
@@ -85,6 +87,7 @@ dl
 pthread
 
 [defines]
+JSON_USE_IMPLICIT_CONVERSIONS=1
 CURL_STATICLIB=1
 
 [cppflags]
@@ -218,19 +221,19 @@ cmake_find_package_multi=Boost
 
 
 [includedirs_libcurl]
-/home/blotter/.conan/data/libcurl/7.74.0/_/_/package/539b44da7a736f055c2112b92bba7f29d6d3c644/include
+/home/blotter/.conan/data/libcurl/7.73.0/_/_/package/539b44da7a736f055c2112b92bba7f29d6d3c644/include
 
 [libdirs_libcurl]
-/home/blotter/.conan/data/libcurl/7.74.0/_/_/package/539b44da7a736f055c2112b92bba7f29d6d3c644/lib
+/home/blotter/.conan/data/libcurl/7.73.0/_/_/package/539b44da7a736f055c2112b92bba7f29d6d3c644/lib
 
 [bindirs_libcurl]
-/home/blotter/.conan/data/libcurl/7.74.0/_/_/package/539b44da7a736f055c2112b92bba7f29d6d3c644/bin
+/home/blotter/.conan/data/libcurl/7.73.0/_/_/package/539b44da7a736f055c2112b92bba7f29d6d3c644/bin
 
 [resdirs_libcurl]
-/home/blotter/.conan/data/libcurl/7.74.0/_/_/package/539b44da7a736f055c2112b92bba7f29d6d3c644/res
+/home/blotter/.conan/data/libcurl/7.73.0/_/_/package/539b44da7a736f055c2112b92bba7f29d6d3c644/res
 
 [builddirs_libcurl]
-/home/blotter/.conan/data/libcurl/7.74.0/_/_/package/539b44da7a736f055c2112b92bba7f29d6d3c644/
+/home/blotter/.conan/data/libcurl/7.73.0/_/_/package/539b44da7a736f055c2112b92bba7f29d6d3c644/
 
 [libs_libcurl]
 curl
@@ -267,13 +270,13 @@ CURL_STATICLIB=1
 
 
 [rootpath_libcurl]
-/home/blotter/.conan/data/libcurl/7.74.0/_/_/package/539b44da7a736f055c2112b92bba7f29d6d3c644
+/home/blotter/.conan/data/libcurl/7.73.0/_/_/package/539b44da7a736f055c2112b92bba7f29d6d3c644
 
 [name_libcurl]
 libcurl
 
 [version_libcurl]
-7.74.0
+7.73.0
 
 [generatornames_libcurl]
 cmake_find_package=CURL
@@ -281,6 +284,70 @@ cmake_find_package_multi=CURL
 pkg_config=libcurl
 
 [generatorfilenames_libcurl]
+
+
+
+[includedirs_nlohmann_json]
+/home/blotter/.conan/data/nlohmann_json/3.9.1/_/_/package/d1091b2ed420e6d287293709a907ae824d5de508/include
+
+[libdirs_nlohmann_json]
+
+
+[bindirs_nlohmann_json]
+
+
+[resdirs_nlohmann_json]
+
+
+[builddirs_nlohmann_json]
+/home/blotter/.conan/data/nlohmann_json/3.9.1/_/_/package/d1091b2ed420e6d287293709a907ae824d5de508/
+
+[libs_nlohmann_json]
+
+
+[system_libs_nlohmann_json]
+
+
+[defines_nlohmann_json]
+JSON_USE_IMPLICIT_CONVERSIONS=1
+
+[cppflags_nlohmann_json]
+
+
+[cxxflags_nlohmann_json]
+
+
+[cflags_nlohmann_json]
+
+
+[sharedlinkflags_nlohmann_json]
+
+
+[exelinkflags_nlohmann_json]
+
+
+[sysroot_nlohmann_json]
+
+
+[frameworks_nlohmann_json]
+
+
+[frameworkdirs_nlohmann_json]
+
+
+[rootpath_nlohmann_json]
+/home/blotter/.conan/data/nlohmann_json/3.9.1/_/_/package/d1091b2ed420e6d287293709a907ae824d5de508
+
+[name_nlohmann_json]
+nlohmann_json
+
+[version_nlohmann_json]
+3.9.1
+
+[generatornames_nlohmann_json]
+
+
+[generatorfilenames_nlohmann_json]
 
 
 
@@ -551,11 +618,13 @@ cmake_find_package_multi=OpenSSL
 [USER_bzip2]
 [USER_libcurl]
 [USER_libiconv]
+[USER_nlohmann_json]
 [USER_openssl]
 [USER_zlib]
 [ENV_boost]
 BOOST_ROOT=/home/blotter/.conan/data/boost/1.74.0/_/_/package/34d4c2885d762a3c4d4b21d2e4dc9a8182b545fa
 [ENV_libcurl]
+[ENV_nlohmann_json]
 [ENV_zlib]
 [ENV_bzip2]
 [ENV_libiconv]
