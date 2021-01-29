@@ -1,30 +1,23 @@
-Start testing: Jan 06 08:33 EST
+Start testing: Jan 29 16:18 EST
 ----------------------------------------------------------
 1/1 Testing: network-monitor-tests
 1/1 Test: network-monitor-tests
 Command: "/mnt/c/Users/turakz/Desktop/learncpptp/projects/livetransportmonitor/network-monitor/build/network-monitor-tests"
 Directory: /mnt/c/Users/turakz/Desktop/learncpptp/projects/livetransportmonitor/network-monitor/build
-"network-monitor-tests" start time: Jan 06 08:33 EST
+"network-monitor-tests" start time: Jan 29 16:18 EST
 Output:
 ----------------------------------------------------------
-Running 5 test cases...
-[           OnConnect] Error: Connection refused
-../tests/websocket-client.cpp(72): [1;31;49merror: in "network_monitor/class_WebSocketClient": check connected has failed[0;39;49m
-../tests/websocket-client.cpp(73): [1;31;49merror: in "network_monitor/class_WebSocketClient": check messageSent has failed[0;39;49m
-../tests/websocket-client.cpp(74): [1;31;49merror: in "network_monitor/class_WebSocketClient": check messageReceived has failed[0;39;49m
-../tests/websocket-client.cpp(75): [1;31;49merror: in "network_monitor/class_WebSocketClient": check disconnected has failed[0;39;49m
-../tests/websocket-client.cpp(76): [1;31;49merror: in "network_monitor/class_WebSocketClient": check message == echo has failed [Hello WebSocket != ][0;39;49m
+Running 18 test cases...
 
-[1;31;49m*** 5 failures are detected in the test module "network-monitor"
+[1;32;49m*** No errors detected
 [0;39;49m
 <end of output>
-Test time =   4.49 sec
+Test time =   1.97 sec
 ----------------------------------------------------------
-Test Fail Reason:
-Required regular expression not found. Regex=[.*No errors detected
-]
-"network-monitor-tests" end time: Jan 06 08:33 EST
-"network-monitor-tests" time elapsed: 00:00:04
+Test Pass Reason:
+Required regular expression found. Regex=[.*No errors detected]
+"network-monitor-tests" end time: Jan 29 16:18 EST
+"network-monitor-tests" time elapsed: 00:00:01
 ----------------------------------------------------------
 
-End testing: Jan 06 08:33 EST
+End testing: Jan 29 16:18 EST
