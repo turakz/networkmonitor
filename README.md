@@ -1,6 +1,6 @@
 live transport network-monitor
 	-project from www.learncppthroughprojects.com
-	-non-official version/implementation by turakz
+	-non-official version/implementation
 
 changelog
 	-12/26/2020: initial commit of project, repo structure, build system, and remote repo
